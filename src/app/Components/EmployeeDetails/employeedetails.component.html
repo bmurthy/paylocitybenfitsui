@@ -1,0 +1,59 @@
+<div class="content" role="main">
+  <div class="card bg-light ">
+<div class="container col-12">
+  <div class="card border-0">
+    <div>
+
+      <button type="button" routerLink="/SalaryCalculation" class="btn btn-warning float-right" style="width: 120px; " > Back</button>
+    </div>
+
+  </div>
+  <div  *ngFor="let employeeCost of employeeCosts">
+
+    <div class="card bg-light ">
+      <div class="card-header">{{employeeCost.firstName}} {{employeeCost.lastName}} </div>
+      <div class="card-body">
+        <div class="row">
+          <label class="col-2">EmployeeId</label>
+          <label class="col-2">{{employeeCost.employeeId}}</label>
+          <label class="col-2">DependentName1</label>
+          <label class="col-2">{{employeeCost.dependentName1}}</label>
+          <label class="col-1">Relation</label>
+          <label class="col-2">{{employeeCost.relation1}}</label>
+         
+        </div>
+        <div class="row">
+          <label class="col-2">Annual Salary</label>
+          <label class="col-2">{{employeeCost.salary}}</label>
+          <label class="col-2">DependentName2</label>
+          <label class="col-2">{{employeeCost.dependentName2}}</label>
+          <label class="col-1">Relation</label>
+          <label class="col-2">{{employeeCost.relation2}}</label>
+          
+        </div>
+        <div class="row">
+          <label class="col-2">Annual Benefits</label>
+          <label class="col-2">{{employeeCost.benefits}}</label>
+          <label class="col-2">DependentName3</label>
+          <label class="col-2">{{employeeCost.dependentName3}}</label>
+          <label class="col-1">Relation</label>
+          <label class="col-2">{{employeeCost.relation3}}</label>
+          
+        </div>
+        <div class="row">
+          <label class="col-2">Cost To Company</label>
+          <label class="col-2">{{employeeCost.costToCompany}}</label>
+          <label class="col-2">DependentName4</label>
+          <label class="col-2">{{employeeCost.dependentName4}}</label>
+          <label class="col-1">Relation</label>
+          <label class="col-2">{{employeeCost.relation4}}</label>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+
+</div>
