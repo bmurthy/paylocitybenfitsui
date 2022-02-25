@@ -45,10 +45,7 @@ onChange2(value: any){
 onChange3(value: any){
   this.relation4 = value;
 }
-// onInput1(dependentName1: string){
-//   this.dependentName1 = dependentName1;
-//   alert(this.dependentName1);
-// }
+
 Calculate(){
   if(this.registerForm.controls.firstName.value != '' && this.registerForm.controls.lastName.value != '')
   {
@@ -61,8 +58,6 @@ this.employee.dependents = [{name:this.registerForm.controls.dependentName1.valu
   
   this.employeeService.calculate(this.employee).subscribe((data:EmployeeCostToCompany) => {
     this.employeeCost = data;
-    console.log(data);
-    console.log(data);
     console.log(this.employeeCost);
   },(error:any) =>{
     
@@ -80,8 +75,11 @@ Save(){
   {
   console.log(this.employeeCost);  
   this.employeeService.saveemployee(this.employeeCost).subscribe(() => {
-    this.notificationService.showSuccess("Successfully added the ne employee.","");
+    
       },(error:any) =>{
+        this.registerForm.reset();
+        this.employeeCost = new EmployeeCostToCompany();
+        this.notificationService.showSuccess("Successfully added the ne employee.","");
         console.error('Save Failed');
        });
       }
